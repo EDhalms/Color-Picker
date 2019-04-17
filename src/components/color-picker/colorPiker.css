@@ -1,0 +1,54 @@
+.color-picker {
+  width: 300px;
+  margin: 0 auto;
+  color: black;
+}
+
+.color-picker__container {
+  display: flex;
+  height: 50px;
+  border: 1px solid #eeeeee;
+  background-color: white;
+}
+
+.selected-color-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.selected-color-section__code {
+
+}
+
+.color-view-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  min-width: 50px;
+  border-left: 1px solid #eeeeee;
+}
+
+.color-view-section__icon {
+  width: 25px;
+  height: 25px;
+}
+
+.color-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  min-width: 50px;
+  border-left: 1px solid #eeeeee;
+}
+
+.color-selection__handler {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 12.5px 0 12.5px;
+  border-color: #9f9f9f transparent transparent transparent;
+}
