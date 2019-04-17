@@ -1,5 +1,35 @@
-.color-list {
+.colors {
+  width: 200px;
   margin: 10px;
-  padding: 10px;
   background-color: white;
+}
+
+.colors-list {
+
+}
+
+.colors-list__color {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.colors-list__color:last-child {
+  border-bottom: none;
+}
+
+.colors-list__color_selected {
+
+}
+
+.colors-list__color-name {
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.colors-list__color-marker {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
 }

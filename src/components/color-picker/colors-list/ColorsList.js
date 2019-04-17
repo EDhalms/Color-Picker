@@ -3,20 +3,26 @@ import './colorsList.css';
 
 class ColorsList extends React.Component {
 
+  state = {
+    color: '#000'
+  }
+
   clickHandle = (color) => {
     this.props.onChange(color);
   };
 
   render() {
     return (
-      <div className="color-list">
-        <ul>
+      <div className="colors">
+        <ul className="colors-list">
           {this.props.colors.map((color, index) => {
               return (
-                <li key={index}
+                <li className={`colors-list__color`}
+                    key={index}
                     onClick={() => this.clickHandle(color.code)}
                 >
-                  {color.label}
+                  <div className="colors-list__color-name">{color.label}</div>
+                  <div className="colors-list__color-marker" style={{backgroundColor: this.state.color}}></div>
                 </li>
               )
             })}
