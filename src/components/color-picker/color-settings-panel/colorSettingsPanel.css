@@ -1,30 +1,27 @@
-.settings-panel {
-  margin: 10px;
-  padding: 10px;
-  background-color: white;
-}
-
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;
   margin: 13.8px 0;
 }
+
 input[type=range]:focus {
   outline: none;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
-  background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(to right, #ff0000 0%,#000000 100%);
   border-radius: 1px;
   border: 0.2px solid rgba(1, 1, 1, 0.15);
 }
+
 input[type=range]::-webkit-slider-thumb {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: #717171;
+  background: #DFDFDF;
   border: 1px solid #b5b5b5;
   cursor: pointer;
   -webkit-appearance: none;
@@ -35,18 +32,20 @@ input[type=range]::-moz-range-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
-  background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(to right, #ff0000 0%,#000000 100%);
   border-radius: 1px;
   border: 0.2px solid rgba(1, 1, 1, 0.15);
 }
+
 input[type=range]::-moz-range-thumb {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: #717171;
+  background: #DFDFDF;
   border: 1px solid #b5b5b5;
   cursor: pointer;
 }
+
 input[type=range]::-ms-track {
   width: 100%;
   height: 4px;
@@ -55,21 +54,100 @@ input[type=range]::-ms-track {
   border-color: transparent;
   color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
   background: rgba(0, 0, 0, 0.79);
   border: 0.2px solid rgba(1, 1, 1, 0.15);
   border-radius: 2.6px;
 }
+
 input[type=range]::-ms-fill-upper {
   background: rgba(48, 113, 129, 0.79);
   border: 0.2px solid rgba(1, 1, 1, 0.15);
   border-radius: 2.6px;
 }
+
 input[type=range]::-ms-thumb {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: #717171;
+  background: #DFDFDF;
   border: 1px solid #b5b5b5;
   cursor: pointer;
+}
+
+.settings-panel {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  font-size: 16px;
+  border: 1px solid #eeeeee;
+}
+
+.panel-field {
+  display: flex;
+  align-items: center;
+}
+
+.panel-field__label {
+  padding-right: 10px;
+}
+
+.panel-field__input_green[type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #008000 0%,#000000 100%);
+}
+
+.panel-field__input_green[type=range]::-moz-range-track {
+  background: linear-gradient(to right, #008000 0%,#000000 100%);
+}
+
+.panel-field__input_blue[type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #0000FF 0%,#000000 100%);
+}
+
+.panel-field__input_blue[type=range]::-moz-range-track {
+  background: linear-gradient(to right, #0000FF 0%,#000000 100%);
+}
+
+.panel-controls {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.panel-controls__btn {
+  height: 30px;
+  padding: 0 16px;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  background-color: #26a69a;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.panel-controls__btn:hover {
+  background-color: #2bbbad;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.panel-controls__btn:active {
+  background-color: #1d7d74;
+}
+
+.panel-controls__cancel {
+  background-color: #DFDFDF;
+  color: #9F9F9F;
+}
+
+.panel-controls__cancel:hover {
+  background-color: #f1f1f1;
+}
+
+.panel-controls__cancel:active {
+  background-color: #bfbfbf;
 }

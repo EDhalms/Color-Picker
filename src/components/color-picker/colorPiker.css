@@ -1,7 +1,6 @@
 .color-picker {
   width: 300px;
   margin: 0 auto;
-  color: black;
 }
 
 .color-picker__container {
@@ -19,7 +18,8 @@
 }
 
 .selected-color-section__code {
-
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .color-view-section {
@@ -32,8 +32,8 @@
 }
 
 .color-view-section__icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 }
 
 .color-selection {
@@ -49,6 +49,6 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 15px 12.5px 0 12.5px;
+  border-width: 8px 7.5px 0 7.5px;
   border-color: #9f9f9f transparent transparent transparent;
 }

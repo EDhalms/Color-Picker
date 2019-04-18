@@ -78,45 +78,47 @@ class ColorSettingsPanel extends React.Component {
     return (
       <div className="settings-panel">
         <div style={{backgroundColor: this.state.hex}}>{this.state.hex}</div>
-        <div>
-          <label>R
-            <input
-              onChange={(event) => this.handleRange(event, 'red')}
-              type="range"
-              min="0"
-              max="255"
-              step="1"
-              value={this.state.rgb.red}
-            />
-          </label>
+        <div className="panel-field">
+          <label className="panel-field__label">R</label>
+          <input
+            className="panel-field__input panel-field__input_red"
+            onChange={(event) => this.handleRange(event, 'red')}
+            type="range"
+            min="0"
+            max="255"
+            step="1"
+            value={this.state.rgb.red}
+          />
         </div>
-        <div>
-          <label>G
-            <input
-              onChange={(event) => this.handleRange(event, 'green')}
-              type="range"
-              min="0"
-              max="255"
-              step="1"
-              value={this.state.rgb.green}
-            />
-          </label>
+        <div className="panel-field">
+          <label className="panel-field__label">G</label>
+          <input
+            className="panel-field__input panel-field__input_green"
+            onChange={(event) => this.handleRange(event, 'green')}
+            type="range"
+            min="0"
+            max="255"
+            step="1"
+            value={this.state.rgb.green}
+          />
         </div>
-        <div>
-          <label>B
-            <input
-              onChange={(event) => this.handleRange(event, 'blue')}
-              type="range"
-              min="0"
-              max="255"
-              step="1"
-              value={this.state.rgb.blue}
-            />
-          </label>
+        <div className="panel-field">
+          <label className="panel-field__label">B</label>
+          <input
+            className="panel-field__input panel-field__input_blue"
+            onChange={(event) => this.handleRange(event, 'blue')}
+            type="range"
+            min="0"
+            max="255"
+            step="1"
+            value={this.state.rgb.blue}
+          />
         </div>
-        <div>
-          <button>cancel</button>
-          <button onClick={this.selectColorHandle}>ok</button>
+        <div className="panel-controls">
+          <button className="panel-controls__btn panel-controls__cancel">cancel</button>
+          <button className="panel-controls__btn"
+                  onClick={this.selectColorHandle}
+          >ok</button>
         </div>
       </div>
     )

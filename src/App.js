@@ -6,11 +6,11 @@ import './App.css';
 const colors = [
   {
     label: 'red',
-    code: '#FF0000'
+    code: '#ff0000'
   },
   {
     label: 'yellow',
-    code: '#FFFF00'
+    code: '#ffff00'
   },
   {
     label: 'green',
@@ -18,7 +18,7 @@ const colors = [
   },
   {
     label: 'blue',
-    code: '#0000FF'
+    code: '#0000ff'
   },
 ];
 

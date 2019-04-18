@@ -2,10 +2,7 @@
   width: 200px;
   margin: 10px;
   background-color: white;
-}
-
-.colors-list {
-
+  border: 1px solid #eeeeee;
 }
 
 .colors-list__color {
@@ -13,6 +10,18 @@
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #eeeeee;
+  cursor: pointer;
+  transition: all .3s ease-out;
+}
+
+.colors-list__color:hover {
+  color: #fff;
+  background-color: #458eff;
+}
+
+.colors-list__color:active {
+  color: #fff;
+  background-color: #0f80ff;
 }
 
 .colors-list__color:last-child {
@@ -20,7 +29,8 @@
 }
 
 .colors-list__color_selected {
-
+  color: #fff;
+  background-color: #0f80ff;
 }
 
 .colors-list__color-name {
@@ -29,7 +39,7 @@
 }
 
 .colors-list__color-marker {
-  width: 25px;
-  min-width: 25px;
-  height: 25px;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
 }

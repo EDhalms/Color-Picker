@@ -19,7 +19,7 @@ class ColorPiker extends React.Component {
     this.setState({
       color
     })
-  }
+  };
 
   render() {
     return (
@@ -43,6 +43,7 @@ class ColorPiker extends React.Component {
 
         <ColorsList
           colors={this.props.colors}
+          color={this.state.color}
           onChange={this.onColorChange}
         />
 
