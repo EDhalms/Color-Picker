@@ -21,21 +21,3 @@
   font-size: 16px;
   text-transform: uppercase;
 }
-
-
-.color-selection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  min-width: 50px;
-  border-left: 1px solid #eeeeee;
-}
-
-.color-selection__handler {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 7.5px 0 7.5px;
-  border-color: #9f9f9f transparent transparent transparent;
-}

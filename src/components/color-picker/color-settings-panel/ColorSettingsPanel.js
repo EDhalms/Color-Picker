@@ -99,8 +99,6 @@ class ColorSettingsPanel extends React.Component {
   };
 
   onOutsideClick = (event) => {
-    console.log('event.target - ', event.target);
-    console.log('this.dropdown - ', this.dropdown);
     if (this.dropdown && !this.dropdown.contains(event.target)) {
       this.setState({
         isOpen: false
@@ -113,10 +111,11 @@ class ColorSettingsPanel extends React.Component {
   render() {
     return (
       <div className="rgb-select">
-        <div className="rgb-handler" onClick={this.onOpen}>
+        <div className="rgb-handler">
           <div className="rgb-color-view"
                style={{backgroundColor: this.state.hex}}
-          ></div>
+               onClick={this.onOpen}
+          />
         </div>
         {this.state.isOpen ? (
           <div className="settings-panel" ref={element => this.dropdown = element}>

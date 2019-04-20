@@ -93,11 +93,12 @@ input[type=range]::-ms-thumb {
 .rgb-color-view {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .settings-panel {
   position: absolute;
-  top: 100%;
+  top: 140%;
   right: 0;
   width: 226px;
   padding: 10px;

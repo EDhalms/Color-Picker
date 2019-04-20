@@ -34,18 +34,18 @@ class ColorPiker extends React.Component {
               onChange={this.onColorChange}
             />
           </div>
-          <div className="color-selection">
-            <div className="color-selection__handler"></div>
+          <div className="hex-section">
+            <ColorsList
+              colors={this.props.colors}
+              color={this.state.color}
+              onChange={this.onColorChange}
+            />
           </div>
         </div>
 
 
 
-        <ColorsList
-          colors={this.props.colors}
-          color={this.state.color}
-          onChange={this.onColorChange}
-        />
+
 
       </div>
     )
