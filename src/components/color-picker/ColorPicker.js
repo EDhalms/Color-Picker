@@ -28,18 +28,18 @@ class ColorPiker extends React.Component {
           <div className="selected-color-section">
             <div className="selected-color-section__code">{this.state.color}</div>
           </div>
-          <div className="color-view-section">
-            <div className="color-view-section__icon" style={{backgroundColor: this.state.color}}></div>
+          <div className="rgb-section">
+            <ColorSettingsPanel
+              color={this.state.color}
+              onChange={this.onColorChange}
+            />
           </div>
           <div className="color-selection">
             <div className="color-selection__handler"></div>
           </div>
         </div>
 
-        <ColorSettingsPanel
-          color={this.state.color}
-          onChange={this.onColorChange}
-        />
+
 
         <ColorsList
           colors={this.props.colors}
