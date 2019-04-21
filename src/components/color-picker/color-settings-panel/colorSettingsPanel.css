@@ -96,15 +96,45 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 
-.settings-panel {
+.rgb-dropdown {
   position: absolute;
   top: 140%;
   right: 0;
   width: 226px;
-  padding: 10px;
   background-color: white;
   font-size: 16px;
   border: 1px solid #eeeeee;
+  box-shadow: 0px 10px 14px 0px rgba(50, 50, 50, 0.3);
+}
+
+.rgb-panel {
+  position: relative;
+  padding: 10px;
+}
+
+.rgb-panel:after, .rgb-panel:before {
+  content: " ";
+  bottom: 100%;
+  right: 8px;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.rgb-panel:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 15px;
+  margin-left: -15px;
+}
+
+.rgb-panel:before {
+  border-color: rgba(238, 238, 238, 0);
+  border-bottom-color: #eee;
+  border-width: 16px;
+  margin-left: -16px;
 }
 
 .panel-field {

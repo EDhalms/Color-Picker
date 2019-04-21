@@ -118,53 +118,55 @@ class ColorSettingsPanel extends React.Component {
           />
         </div>
         {this.state.isOpen ? (
-          <div className="settings-panel" ref={element => this.dropdown = element}>
-            <p>{this.state.hex}</p>
-            <div className="panel-field">
-              <label className="panel-field__label">R</label>
-              <input
-                className="panel-field__input panel-field__input_red"
-                onChange={(event) => this.handleRange(event, 'red')}
-                type="range"
-                min="0"
-                max="255"
-                step="1"
-                value={this.state.rgb.red}
-              />
-            </div>
-            <div className="panel-field">
-              <label className="panel-field__label">G</label>
-              <input
-                className="panel-field__input panel-field__input_green"
-                onChange={(event) => this.handleRange(event, 'green')}
-                type="range"
-                min="0"
-                max="255"
-                step="1"
-                value={this.state.rgb.green}
-              />
-            </div>
-            <div className="panel-field">
-              <label className="panel-field__label">B</label>
-              <input
-                className="panel-field__input panel-field__input_blue"
-                onChange={(event) => this.handleRange(event, 'blue')}
-                type="range"
-                min="0"
-                max="255"
-                step="1"
-                value={this.state.rgb.blue}
-              />
-            </div>
-            <div className="panel-controls">
-              <button className="panel-controls__btn panel-controls__cancel"
-                      onClick={this.onCancelColor}
-              >cancel</button>
-              <button className="panel-controls__btn"
-                      onClick={this.onSaveColor}
-              >ok</button>
+          <div className="rgb-dropdown" ref={element => this.dropdown = element}>
+            <div className="rgb-panel">
+              <div className="panel-field">
+                <label className="panel-field__label">R</label>
+                <input
+                  className="panel-field__input panel-field__input_red"
+                  onChange={(event) => this.handleRange(event, 'red')}
+                  type="range"
+                  min="0"
+                  max="255"
+                  step="1"
+                  value={this.state.rgb.red}
+                />
+              </div>
+              <div className="panel-field">
+                <label className="panel-field__label">G</label>
+                <input
+                  className="panel-field__input panel-field__input_green"
+                  onChange={(event) => this.handleRange(event, 'green')}
+                  type="range"
+                  min="0"
+                  max="255"
+                  step="1"
+                  value={this.state.rgb.green}
+                />
+              </div>
+              <div className="panel-field">
+                <label className="panel-field__label">B</label>
+                <input
+                  className="panel-field__input panel-field__input_blue"
+                  onChange={(event) => this.handleRange(event, 'blue')}
+                  type="range"
+                  min="0"
+                  max="255"
+                  step="1"
+                  value={this.state.rgb.blue}
+                />
+              </div>
+              <div className="panel-controls">
+                <button className="panel-controls__btn panel-controls__cancel"
+                        onClick={this.onCancelColor}
+                >cancel</button>
+                <button className="panel-controls__btn"
+                        onClick={this.onSaveColor}
+                >ok</button>
+              </div>
             </div>
           </div>
+
         ) : null}
 
       </div>

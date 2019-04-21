@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.color-selection {
+.color-handler {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 
-.color-selection__handler {
+.color-handler__icon {
   width: 0;
   height: 0;
   border-style: solid;
@@ -21,49 +21,78 @@
   border-color: #9f9f9f transparent transparent transparent;
 }
 
-.colors-list {
+.colors-dropdown {
   position: absolute;
   top: 140%;
   right: 0;
   width: 200px;
   background-color: white;
   border: 1px solid #eeeeee;
+  box-shadow: 0px 10px 14px 0px rgba(50, 50, 50, 0.3);
 }
 
-.colors-list__color {
+.colors-list {
+  position: relative;
+}
+
+.colors-list:after, .colors-list:before {
+  content: " ";
+  bottom: 100%;
+  right: 8px;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.colors-list:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 15px;
+  margin-left: -15px;
+}
+.colors-list:before {
+  border-color: rgba(238, 238, 238, 0);
+  border-bottom-color: #eee;
+  border-width: 16px;
+  margin-left: -16px;
+}
+
+.colors-list__item {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 13px;
   border-bottom: 1px solid #eeeeee;
   cursor: pointer;
   transition: all .3s ease-out;
 }
 
-.colors-list__color:hover {
+.colors-list__item:hover {
   color: #fff;
   background-color: #458eff;
 }
 
-.colors-list__color:active {
+.colors-list__item:active {
   color: #fff;
   background-color: #0f80ff;
 }
 
-.colors-list__color:last-child {
+.colors-list__item:last-child {
   border-bottom: none;
 }
 
-.colors-list__color_selected {
+.colors-list__item_selected {
   color: #fff;
   background-color: #0f80ff;
 }
 
-.colors-list__color-name {
+.colors-list__item-name {
   flex: 1;
   text-transform: uppercase;
 }
 
-.colors-list__color-marker {
+.colors-list__item-marker {
   width: 20px;
   min-width: 20px;
   height: 20px;
