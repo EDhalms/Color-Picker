@@ -1,7 +1,7 @@
 import React from 'react';
-import ColorsList from './colors-list/ColorsList';
-import ColorSettingsPanel from './color-settings-panel/ColorSettingsPanel';
-import './colorPiker.css';
+import HexSelect from './hex-select/HexSelect';
+import RgbSelect from './rgb-select/RgbSelect';
+import './colorPicker.css';
 
 class ColorPiker extends React.Component {
   state = {
@@ -15,7 +15,6 @@ class ColorPiker extends React.Component {
   }
 
   onColorChange = (color) => {
-    console.log('onColorChange - ', color);
     this.setState({
       color
     })
@@ -29,28 +28,22 @@ class ColorPiker extends React.Component {
             <div className="selected-color-section__code">{this.state.color}</div>
           </div>
           <div className="rgb-section">
-            <ColorSettingsPanel
+            <RgbSelect
               color={this.state.color}
               onChange={this.onColorChange}
             />
           </div>
           <div className="hex-section">
-            <ColorsList
+            <HexSelect
               colors={this.props.colors}
-              color={this.state.color}
+              currentColor={this.state.color}
               onChange={this.onColorChange}
             />
           </div>
         </div>
-
-
-
-
-
       </div>
     )
   }
-
 }
 
 export default ColorPiker;

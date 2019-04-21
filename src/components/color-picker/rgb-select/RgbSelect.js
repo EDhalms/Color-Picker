@@ -1,7 +1,7 @@
 import React from 'react';
-import './colorSettingsPanel.css';
+import './rgbSelect.css';
 
-class ColorSettingsPanel extends React.Component {
+class RgbSelect extends React.Component {
   state = {
     rgb: {
       red: 0,
@@ -13,16 +13,19 @@ class ColorSettingsPanel extends React.Component {
   };
 
   componentDidMount() {
-    this.setHex(this.props.color);
-    this.setRgb(this.hexToRgb(this.props.color));
+    this.synchronizeWithPiker();
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.color !== this.props.color) {
-      this.setHex(this.props.color);
-      this.setRgb(this.hexToRgb(this.props.color));
+      this.synchronizeWithPiker();
     }
   }
+
+  synchronizeWithPiker = () => {
+    this.setHex(this.props.color);
+    this.setRgb(this.hexToRgb(this.props.color));
+  };
 
   setRgb = (rgb) => {
     this.setState({
@@ -77,8 +80,7 @@ class ColorSettingsPanel extends React.Component {
   };
 
   onCancelColor = () => {
-    this.setHex(this.props.color);
-    this.setRgb(this.hexToRgb(this.props.color));
+    this.synchronizeWithPiker();
     this.onClose();
   };
 
@@ -109,15 +111,17 @@ class ColorSettingsPanel extends React.Component {
   };
 
   render() {
+    const {hex, rgb, isOpen} = this.state;
+
     return (
       <div className="rgb-select">
         <div className="rgb-handler">
           <div className="rgb-color-view"
-               style={{backgroundColor: this.state.hex}}
+               style={{backgroundColor: hex}}
                onClick={this.onOpen}
           />
         </div>
-        {this.state.isOpen ? (
+        {isOpen ? (
           <div className="rgb-dropdown" ref={element => this.dropdown = element}>
             <div className="rgb-panel">
               <div className="panel-field">
@@ -129,7 +133,7 @@ class ColorSettingsPanel extends React.Component {
                   min="0"
                   max="255"
                   step="1"
-                  value={this.state.rgb.red}
+                  value={rgb.red}
                 />
               </div>
               <div className="panel-field">
@@ -141,7 +145,7 @@ class ColorSettingsPanel extends React.Component {
                   min="0"
                   max="255"
                   step="1"
-                  value={this.state.rgb.green}
+                  value={rgb.green}
                 />
               </div>
               <div className="panel-field">
@@ -153,7 +157,7 @@ class ColorSettingsPanel extends React.Component {
                   min="0"
                   max="255"
                   step="1"
-                  value={this.state.rgb.blue}
+                  value={rgb.blue}
                 />
               </div>
               <div className="panel-controls">
@@ -166,12 +170,10 @@ class ColorSettingsPanel extends React.Component {
               </div>
             </div>
           </div>
-
         ) : null}
-
       </div>
     )
   }
 }
 
-export default ColorSettingsPanel;
+export default RgbSelect;

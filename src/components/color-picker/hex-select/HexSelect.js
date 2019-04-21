@@ -1,7 +1,7 @@
 import React from 'react';
-import './colorsList.css';
+import './hexSelect.css';
 
-class ColorsList extends React.Component {
+class HexSelect extends React.Component {
   state = {
     isOpen: false
   };
@@ -27,17 +27,20 @@ class ColorsList extends React.Component {
   };
 
   render() {
+    const {isOpen} = this.state;
+    const {colors, currentColor} = this.props;
+
     return (
       <div className="colors">
         <div className="color-handler" onClick={this.onOpen}>
           <div className="color-handler__icon" />
         </div>
-        {this.state.isOpen ? (
+        {isOpen ? (
           <div className="colors-dropdown">
             <ul className="colors-list">
-              {this.props.colors.map((color, index) => {
+              {colors.map((color, index) => {
                 return (
-                  <li className={`colors-list__item ${color.code === this.props.color ? 'colors-list__item_selected' : ''}`}
+                  <li className={`colors-list__item ${color.code === currentColor ? 'colors-list__item_selected' : ''}`}
                       key={index}
                       onClick={() => this.clickHandle(color.code)}
                   >
@@ -55,4 +58,4 @@ class ColorsList extends React.Component {
   }
 }
 
-export default ColorsList;
+export default HexSelect;
