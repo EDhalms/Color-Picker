@@ -23,10 +23,19 @@ const colors = [
 ];
 
 class App extends Component {
+
+  onColorPickerChange = (color) => {
+    console.log('onColorPickerChange - ', color);
+  };
+
   render() {
     return (
       <div className="App">
-        <ColorPicker colors={colors}/>
+        <ColorPicker
+          value="#ff0000"
+          onChange={this.onColorPickerChange}
+          colors={colors}
+        />
       </div>
     );
   }

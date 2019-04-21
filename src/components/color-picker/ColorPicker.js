@@ -5,16 +5,18 @@ import './colorPicker.css';
 
 class ColorPiker extends React.Component {
   state = {
-    color: '#000'
+    color: ''
   };
 
   componentDidMount() {
     this.setState({
-      color: this.props.colors[0].code
+      color: this.props.value
     })
   }
 
   onColorChange = (color) => {
+    this.props.onChange(color);
+
     this.setState({
       color
     })
