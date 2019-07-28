@@ -1,5 +1,4 @@
 import React from 'react';
-import HexSelect from './hex-select/HexSelect';
 import HexSelectHooks from './hex-select/HexSelectHooks';
 import RgbSelect from './rgb-select/RgbSelect';
 import './colorPicker.css';
@@ -37,13 +36,12 @@ class ColorPiker extends React.Component {
             />
           </div>
           <div className="hex-section">
-            <HexSelect
-              colors={this.props.colors}
-              currentColor={this.state.color}
-              onChange={this.onColorChange}
+            <HexSelectHooks
+                colors={this.props.colors}
+                currentColor={this.state.color}
+                onChange={this.onColorChange}
             />
           </div>
-          <HexSelectHooks />
         </div>
       </div>
     )
