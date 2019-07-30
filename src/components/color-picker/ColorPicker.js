@@ -31,11 +31,10 @@ class ColorPiker extends React.Component {
             <div className="selected-color-section__code">{this.state.color}</div>
           </div>
           <div className="rgb-section">
-            <RgbSelect
-              color={this.state.color}
-              onChange={this.onColorChange}
+            <RgbSelectHooks
+                color={this.state.color}
+                onChange={this.onColorChange}
             />
-            <RgbSelectHooks />
           </div>
           <div className="hex-section">
             <HexSelectHooks
