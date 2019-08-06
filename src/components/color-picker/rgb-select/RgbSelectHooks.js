@@ -16,6 +16,15 @@ const RgbSelectHooks = (props) => {
         synchronizeWithPiker();
     }, [props.color]);
 
+    useEffect(() => {
+        if(isOpen) {
+            document.addEventListener('click', onOutsideClick);
+        }
+        return () => {
+            document.removeEventListener('click', onOutsideClick);
+        }
+    }, [isOpen]);
+
 
     const synchronizeWithPiker = () => {
         setHex(props.color);
@@ -59,27 +68,20 @@ const RgbSelectHooks = (props) => {
 
     const onCancelColor = () => {
         synchronizeWithPiker();
-        console.log(onClose);
         onClose();
     };
 
     const onOpen = () => {
         setIsOpen(true);
-        document.addEventListener('click', onOutsideClick);
     };
 
     const onClose = () => {
         setIsOpen(false);
-        document.removeEventListener('click', onOutsideClick);
     };
 
     const onOutsideClick = (event) => {
-        console.log(dropdown.current);
-        console.log(dropdown.current.contains(event.target));
-
         if (dropdown.current && !dropdown.current.contains(event.target)) {
-            setIsOpen(false);
-            document.removeEventListener('click', onOutsideClick);
+            onClose();
         }
     };
 
