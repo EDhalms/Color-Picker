@@ -1,6 +1,5 @@
 import React from 'react';
 import HexSelectHooks from './hex-select/HexSelectHooks';
-import RgbSelect from './rgb-select/RgbSelect';
 import RgbSelectHooks from './rgb-select/RgbSelectHooks';
 import './colorPicker.css';
 
