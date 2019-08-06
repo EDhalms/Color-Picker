@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import ColorPickerHooks from './components/color-picker/ColorPickerHooks';
+import React from 'react';
+import ColorPicker from './components/color-picker/ColorPicker';
 import './reset.css';
 import './App.css';
 
@@ -22,23 +22,21 @@ const colors = [
   },
 ];
 
-class App extends Component {
+const App = () => {
 
-  onColorPickerChange = (color) => {
+  const onColorPickerChange = (color) => {
     console.log('onColorPickerChange - ', color);
   };
 
-  render() {
-    return (
-      <div className="App">
-        <ColorPickerHooks
-            value="#ff0000"
-            onChange={this.onColorPickerChange}
-            colors={colors}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <ColorPicker
+          value="#ff0000"
+          onChange={onColorPickerChange}
+          colors={colors}
+      />
+    </div>
+  );
+};
 
 export default App;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import HexSelectHooks from './hex-select/HexSelectHooks';
-import RgbSelectHooks from './rgb-select/RgbSelectHooks';
+import HexSelectHooks from './hex-select/HexSelect';
+import RgbSelect from './rgb-select/RgbSelect';
 import './colorPicker.css';
 
-const ColorPickerHooks = (props) => {
+const ColorPicker = (props) => {
     const [color, setColor] = useState('');
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const ColorPickerHooks = (props) => {
                     <div className="selected-color-section__code">{color}</div>
                 </div>
                 <div className="rgb-section">
-                    <RgbSelectHooks
+                    <RgbSelect
                         color={color}
                         onChange={onColorChange}
                     />
@@ -39,4 +39,4 @@ const ColorPickerHooks = (props) => {
     );
 };
 
-export default ColorPickerHooks;
+export default ColorPicker;

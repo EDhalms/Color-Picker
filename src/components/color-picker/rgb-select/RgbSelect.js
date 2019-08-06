@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import './rgbSelect.css';
 
-const RgbSelectHooks = (props) => {
+const RgbSelect = (props) => {
     const [rgb, setRgb] = useState({
         red: 0,
         green: 0,
@@ -147,4 +147,4 @@ const RgbSelectHooks = (props) => {
     )
 };
 
-export default RgbSelectHooks;
+export default RgbSelect;
